@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { MpSdk, ShowcaseBundleWindow } from "../public/mpsdk/sdk";
+import '@matterport/webcomponent';
 
 const modelId = "tGyWXtmhhyX";
 const sdkKey = "7aut9rt179u5hssepdg2wpa5b";
@@ -61,14 +62,7 @@ export default function Matterport(props: MatterportProps) {
 
   return(
     <>
-      <iframe
-        id='mp-embed'
-        src={iframeSrc}
-        allowFullScreen
-        title='Matterport'
-        style={{ height: "100%", width: "100%" }}
-        frameBorder={0}
-      />
+      <matterport-viewer m={modelId} qs="1" mls="2"></matterport-viewer>
     </>
   );
 }
